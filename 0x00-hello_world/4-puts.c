@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * main - this main function prints the defined words
- * 
- * Return:returns zero if success
+ * main - this main function prints out a string using the puts() function
+ *
+ * Return: the return value returns 0 shows that the compilation was a success
  */
 int main(void)
 {
