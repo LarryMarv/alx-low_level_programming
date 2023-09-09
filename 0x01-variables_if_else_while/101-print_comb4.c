@@ -1,39 +1,32 @@
 #include <stdio.h>
 /**
-  *main - entry point
-  *
-  *Return: 0 if succes
-  */
+ * main -Combinations of three digits
+ * Return:0 if successful
+ */
 int main(void)
 {
-	/*delcalration */
-	int a = '0';
-	int b, c;
-	/* intialization */
-	while (a <= '7')
+	int n, m, l;
+
+	for (n = 48; n < 58; n++)
 	{
-		b = a + 1;
-		while (b <= '8')
+		for (m = 49; m < 58; m++)
 		{
-			while (c <= '9')
+			for (l = 50; l < 58; l++)
 			{
-				putchar(a);
-				putchar(b);
-				putchar(c);
-				if (a == '7' && b == '8' && c == '9')
+				if (l > m && m > n)
 				{
-					putchar('\n');
+					putchar(n);
+					putchar(m);
+					putchar(l);
+					if (n != 55 || m != 56)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
-				else
-				{
-					putchar(',');
-					putchar(' ');
-				}
-				c++;
 			}
-			b++;
 		}
-		a++;
 	}
+	putchar('\n');
 	return (0);
 }
