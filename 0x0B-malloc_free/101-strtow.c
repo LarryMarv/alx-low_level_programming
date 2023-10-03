@@ -3,15 +3,18 @@
 
 /**
  * count_word - count the number of words in a string
- * @s: string of interest
+ * @s: string to evaluate
+ *
  * Return: number of words
  */
-
 int count_word(char *s)
 {
-	int flag = 0, c = 0, w = 0;
+	int flag, c, w;
 
-	while (s[c] != '\0')
+	flag = 0;
+	w = 0;
+
+	for (c = 0; s[c] != '\0'; c++)
 	{
 		if (s[c] == ' ')
 			flag = 0;
@@ -20,33 +23,33 @@ int count_word(char *s)
 			flag = 1;
 			w++;
 		}
-		c++;
 	}
+
 	return (w);
 }
-
 /**
- * **strtow - splits a string into words
+ * **strtow - func  splits a string into words
  * @str: string to split
- * Return: pointer to an array of strings Succes or NULL Error
+ *
+ * Return:the pointer to an array of strings (Success)
+ * or NULL (Error)
  */
-
 char **strtow(char *str)
 {
 	char **matrix, *tmp;
 	int i, k = 0, len = 0, words, c = 0, start, end;
 
-	while (str[len])
+	while (*(str + len))
 		len++;
 	words = count_word(str);
-	if (words == '\0')
+	if (words == 0)
 		return (NULL);
 
 	matrix = (char **) malloc(sizeof(char *) * (words + 1));
 	if (matrix == NULL)
 		return (NULL);
-	i = 0;
-	while (i <= len)
+
+	for (i = 0; i <= len; i++)
 	{
 		if (str[i] == ' ' || str[i] == '\0')
 		{
@@ -63,11 +66,12 @@ char **strtow(char *str)
 				k++;
 				c = 0;
 			}
-			i++;
 		}
 		else if (c++ == 0)
 			start = i;
 	}
+
 	matrix[k] = NULL;
+
 	return (matrix);
 }
