@@ -3,6 +3,7 @@
 #include <time.h>
 /**
  * f4 - finds the biggest number
+ * task
  * @usrn: username
  * @len: length of username
  * Return: the biggest number
@@ -31,7 +32,7 @@ int f4(char *usrn, int len)
 
 /**
  * f5 - multiplies each char of username
- *
+ * task
  * @usrn: username
  * @len: length of username
  * Return: multiplied char
@@ -54,7 +55,7 @@ int f5(char *usrn, int len)
 
 /**
  * f6 - generates a random char
- *
+ * Task
  * @usrn: username
  * Return: a random char
  */
@@ -76,7 +77,7 @@ int f6(char *usrn)
 
 /**
  * main - Entry point
- *
+ * task
  * @argc: arguments count
  * @argv: arguments vector
  * Return: Always 0
